@@ -6,6 +6,22 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 
+
+st.markdown("""
+<style>
+/* Hide Fork button */
+[data-testid="stAppDeployButton"] {
+    display: none;
+}
+
+/* Hide GitHub icon/link */
+a[href*="github.com"] {
+    display: none !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT / "outputs" / "final_conservation_dataset.csv"
 MODEL_PATH = ROOT / "outputs" / "streamlit_rf_model.joblib"
